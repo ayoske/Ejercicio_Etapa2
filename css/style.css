@@ -114,3 +114,18 @@ body img:first-child{
     margin-left: -21px;
   }
 }
+
+@media screen and (max-width: 991px) {
+  
+  
+body img:first-child {
+    width: 172%;
+    margin-top: 35px;
+    margin-left: -145px;
+	}
+	
+.login {
+    padding-top: 23px;
+    margin-bottom: 80px;
+}
+}
