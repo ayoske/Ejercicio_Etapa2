@@ -90,6 +90,15 @@ body img:first-child{
     margin-top: 40px;
 }
 
+/* Cerrar sesion*/
+
+#btnLogout{
+	border-radius: unset;
+	color: #e4e3e3;
+	background-color: #de0698;
+    margin-top: 40px;
+}
+
 @media screen and (min-width: 992px) {
   
   .crear button{

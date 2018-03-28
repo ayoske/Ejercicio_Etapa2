@@ -20,7 +20,7 @@
 	<body>
 		<img src="img/G2Encabezado.jpg" alt="">
 		<div class="container">
-			<div class="row login">
+			<div id="login" class="row login">
 				<div class="col-md-offset-1 col-md-4 inicio">
 					<h3>Iniciar Sesión</h3>
 					<div class="inner-addon left-addon">
@@ -45,8 +45,8 @@
 					<button class="btn btn-block" data-toggle="modal" data-target="#Sgnt">CREAR CUENTA</button>
 				</div>
 			</div>
-			<div class="row logout hide">
-				<button id="btnLogout" class="btn btn-block">CERRAR SESIÓN</button>
+			<div id="logout" class="row">
+				<button id="btnLogout" class="btn">CERRAR SESIÓN</button>
 			</div>
 		</div>
 
@@ -59,7 +59,7 @@
 		        </button>
 		      </div>
 		      <div class="modal-body">
-		        <p>Correo o Contraseña incorrectas</p>
+		        <p id="txtModal"></p>
 		      </div>
 		      <div class="modal-footer">
 		        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

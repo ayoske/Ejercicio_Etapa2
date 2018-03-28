@@ -31,7 +31,10 @@
 
     //Sign in
     const promise = auth.signInWithEmailAndPassword(email,password);
-    promise.catch(e => $('#ModFail').modal());
+    promise.catch(e => {
+       $('#txtModal').text('El correo o contraseña son incorrectos');
+        $('#ModFail').modal('show');
+      });
   });
 
   //Evento boton Sign up
@@ -41,12 +44,26 @@
     const sgnemail = sgnEmail.value;
     const sgnpassword = sgnPassword.value;
     //Verificar Formato de Email
+    var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if (!expr.test(sgnemail)){
+        $('#txtModal').text('El formato de correo electrónico es incorrecto, favor de verificar');
+        $('#ModFail').modal('show');
+        return false;
+    }else if(sgnpassword.length<6){
+      $('#txtModal').text('La contraseña debe tener minimo 6 caracteres');
+      $('#ModFail').modal('show');
+      return false;
+    }
     // Para guardar la promese 
     const auth = firebase.auth();
 
     //Sign up
     const promise = auth.createUserWithEmailAndPassword(sgnemail,sgnpassword);
-    promise.catch(e => console.log(e.messege));
+    promise.catch(e => {
+       $('#txtModal').text('El correo o contraseña son incorrectos');
+        $('#ModFail').modal('show');
+      }
+    );
   });
 
   btnLogout.addEventListener('click', e => {
@@ -59,11 +76,13 @@
       console.log(firebaseUser);
       //Ocultar boton Logout 
       console.log('logueado');
-      // btnLogin.classList.remove('hide');
-    }else{
+      $('#login').css("display", "none");
+      $('#logout').css("display", "block");
+  }else{
       console.log('No logueado');
       //Esconder boton Login
-      // btnLogout.classList.add(hide);
+      $('#logout').css("display", "none");
+      $('#login').css("display", "block");
     }
   });
 
