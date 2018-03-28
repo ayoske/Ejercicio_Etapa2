@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Bambu Mobile</title>
+		<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.css">
+		<link rel="stylesheet" href="css/style.css">
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<img src="img/G2Encabezado.jpg" alt="">
+		<div class="container">
+			<div class="row login">
+				<div class="col-md-offset-1 col-md-4 inicio">
+					<h3>Iniciar Sesión</h3>
+					<div class="inner-addon left-addon">
+					    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+					    <input id="txtEmail" type="email" class="form-control" placeholder="Email" />
+					</div>
+					<div class="inner-addon left-addon">
+					    <i class="fa fa-lock" aria-hidden="true"></i>
+					    <input id="txtPassword" type="password" class="form-control" placeholder="*Contraseña" />
+					</div>
+					<button id="btnLogin" class="btn btn-block">INICIAR SESIÓN</button>
+					<a id="" class="btn-block" href="" >¿Olvidaste tu contraseña?</a>
+				</div>
+				<div class="col-md-offset-2 col-md-4 crear">
+					<h3>Crear Cuenta</h3>
+					<ul>
+						<li>Abre una cuenta de forma gratuita</li>
+						<li>Tenemos mas de 120 sucursales  en 10 estados diferentes a tu disposición</li>
+						<li>Tú eliges dónde entrenar</li>
+						<li>Puedes darte de baja cuando quieras</li>
+					</ul>
+					<button class="btn btn-block" data-toggle="modal" data-target="#Sgnt">CREAR CUENTA</button>
+				</div>
+			</div>
+			<div class="row logout hide">
+				<button id="btnLogout" class="btn btn-block">CERRAR SESIÓN</button>
+			</div>
+		</div>
+
+		<div class="modal fade" id="ModFail" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		        <p>Correo o Contraseña incorrectas</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="modal fade" id="Sgnt" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+				<div class="inner-addon left-addon">
+				    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+				    <input id="sgnEmail" type="email" class="form-control" placeholder="Email" />
+				</div>
+				<div class="inner-addon left-addon">
+				    <i class="fa fa-lock" aria-hidden="true"></i>
+				    <input id="sgnPassword" type="password" class="form-control" placeholder="*Contraseña" />
+				</div>
+			  </div>
+		      <div class="modal-footer">
+		      <button id="btnSignup" class="btn btn-block" data-toggle="modal" data-target="#Sgnt">CREAR CUENTA</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js""></script>
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+ 		<script src="js/script.js"></script>
+	</body>
+</html>
+
