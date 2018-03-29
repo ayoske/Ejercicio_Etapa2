@@ -17,7 +17,6 @@
   const txtPassword = document.getElementById('txtPassword');
   const btnLogin = document.getElementById('btnLogin');
   const btnSignup = document.getElementById('btnSignup');
-  const btnLogout = document.getElementById('btnLogout');
   const sgnEmail = document.getElementById('sgnEmail');
   const sgnPassword = document.getElementById('sgnPassword');
   //Evento boton Sign in
@@ -66,12 +65,6 @@
     );
   });
 
-  btnLogout.addEventListener('click', e => {
-    firebase.auth().signOut();
-    email = "";
-    password="";
-  });
-
   //Listener en tiempo real del estado actual
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if(firebaseUser){
@@ -79,11 +72,18 @@
       //Ocultar boton Logout 
       console.log('logueado');
       $('#login').css("display", "none");
-      $('#logout').css("display", "block");
+      $( ".container" ).append( "<div id='logout'></div>" );
+      $( "#logout" ).append( "<div class='col-md-6'><h1>Panel de Administración</h1></div><div class='col-md-offset-4 col-md-2'><button id='btnLogout' class='btn left'>CERRAR SESIÓN</button></div>");
+      const btnLogout = document.getElementById('btnLogout');
+      btnLogout.addEventListener('click', e => {
+        firebase.auth().signOut();
+        email = "";
+        password="";
+      });
   }else{
       console.log('No logueado');
       //Esconder boton Login
-      $('#logout').css("display", "none");
+      $( "#logout" ).remove();
       $('#login').css("display", "block");
     }
   });
