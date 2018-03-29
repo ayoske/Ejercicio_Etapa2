@@ -49,8 +49,8 @@
         $('#txtModal').text('El formato de correo electrónico es incorrecto, favor de verificar');
         $('#ModFail').modal('show');
         return false;
-    }else if(sgnpassword.length<6){
-      $('#txtModal').text('La contraseña debe tener minimo 6 caracteres');
+    }else if(sgnpassword.length<8 || sgnpassword.length>16){
+      $('#txtModal').text('La contraseña debe tener minimo 8 caracteres y maximo 16 caracteres');
       $('#ModFail').modal('show');
       return false;
     }
@@ -68,6 +68,8 @@
 
   btnLogout.addEventListener('click', e => {
     firebase.auth().signOut();
+    email = "";
+    password="";
   });
 
   //Listener en tiempo real del estado actual
